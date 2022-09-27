@@ -1,0 +1,42 @@
+.modalbg {
+  backdrop-filter: blur(4px) brightness(90%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+}
+
+.modal {
+  background-color: white;
+  border: 1px solid #cacaca;
+  max-width: 400px;
+  margin: 10px;
+  border-radius: 15px;
+
+  > h3 {
+    text-align: center;
+    margin: 0;
+    padding: 10px 10px;
+    border-bottom: 1px solid #cacaca;
+  }
+
+  > p {
+   padding: 10px;
+   margin: 0;
+  }
+
+  > button {
+    border: none;
+    border-top: 1px solid #cacaca;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}

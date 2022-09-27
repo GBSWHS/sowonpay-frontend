@@ -3,6 +3,8 @@ import AnimatedNumbers from 'react-animated-numbers'
 import Container from '../Container/Container'
 import { useCookie } from 'react-use'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { FaMoneyBill, FaWallet } from 'react-icons/fa'
 import QRCode from 'react-qr-code'
 
 import style from './HomePage.module.scss'
@@ -40,23 +42,35 @@ const HomePage = (): JSX.Element => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className={style.home}>
-            <div className={style.qr}>
-              <QRCode size={256} value={`https://sowonpay.gbsw.hs.kr/users/${user.id as string}`}/>
+            className={style.outer}>
+            <div className={style.home}>
+              <div className={style.qr}>
+                <QRCode size={256} value={`https://sowonpay.gbsw.hs.kr/users/${user.id as string}`}/>
+              </div>
+              <p className={style.hello}><strong>{user.name}</strong>님의 소원포인트!</p>
+              <div className={style.point}>
+                <AnimatedNumbers
+                  animateToNumber={point}
+                  includeComma
+                  fontStyle={{ fontSize: 50, fontWeight: 800 }}
+                  configs={[
+                    { mass: 1, tension: 130, friction: 40 },
+                    { mass: 2, tension: 140, friction: 40 },
+                    { mass: 3, tension: 130, friction: 40 }]}
+                  />
+                <p>p</p>
+              </div>
             </div>
-            <p className={style.hello}><strong>{user.name}</strong>님의 소원포인트!</p>
-            <div className={style.point}>
-              <AnimatedNumbers
-                animateToNumber={point}
-                includeComma
-                fontStyle={{ fontSize: 50, fontWeight: 800 }}
-                configs={[
-                  { mass: 1, tension: 130, friction: 40 },
-                  { mass: 2, tension: 140, friction: 40 },
-                  { mass: 3, tension: 130, friction: 40 }]}
-                />
-              <p>p</p>
-            </div>
+            {(user.isAdmin === true || user.booths.length > 0) && (
+              <nav className={style.navbar}>
+                {user.isAdmin === true && (
+                  <Link to="/bank"><FaMoneyBill /><div>소원은행<br />(포인트 발급)</div></Link>
+                )}
+                {user.booths.length > 0 && (
+                  <Link to="/booth"><FaWallet /><div>부스지갑<br />(포인트 수집)</div></Link>
+                )}
+              </nav>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

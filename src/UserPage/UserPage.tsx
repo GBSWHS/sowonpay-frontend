@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useCookie } from 'react-use'
 import Container from '../Container/Container'
 import Ripple from 'react-ripples'
 import Button from '../components/Button/Button'
-import { FaBackspace, FaCheck, FaMoneyBill, FaStore } from 'react-icons/fa'
+import { FaAngleLeft, FaBackspace, FaCheck, FaMoneyBill, FaStore } from 'react-icons/fa'
 
 import style from './UserPage.module.scss'
 import Modal from '../components/Modal/Modal'
@@ -104,9 +104,10 @@ const UserPage = (): JSX.Element => {
 
   return (
     <Container>
+      <Link replace to="/qrscan"><button className={style.back}><FaAngleLeft /></button></Link>
       <AnimatePresence>
         {message.length > 0 && (
-          <Modal onClose={() => navigate('/')} content={message}/>
+          <Modal onClose={() => navigate('/qrscan', { replace: true })} content={message}/>
         )}
       </AnimatePresence>
       {Object.keys(me).length > 0

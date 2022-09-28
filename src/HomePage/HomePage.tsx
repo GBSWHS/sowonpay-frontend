@@ -16,6 +16,8 @@ const HomePage = (): JSX.Element => {
   const [, , removeSession] = useCookie('SESSION_TOKEN')
 
   useEffect(() => {
+    document.title = '소원페이 - 내포인트'
+
     const eventSource = new EventSource('/api/users/@live')
     eventSource.onmessage = ({ data }) => {
       data = JSON.parse(data)

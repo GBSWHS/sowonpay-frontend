@@ -5,6 +5,7 @@ import { useCookie } from 'react-use'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from '../LoginPage/LoginPage'
 import HomePage from '../HomePage/HomePage'
+import QRScanPage from '../QRScanPage/QRScanPage'
 
 const App = (): JSX.Element => {
   const [isLogined] = useCookie('SESSION_TOKEN')
@@ -16,6 +17,7 @@ const App = (): JSX.Element => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/qrscan" element={<QRScanPage />} />
       </Routes>
     </BrowserRouter>
   )

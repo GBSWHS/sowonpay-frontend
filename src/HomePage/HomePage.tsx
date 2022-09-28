@@ -48,7 +48,7 @@ const HomePage = (): JSX.Element => {
             className={style.outer}>
             <div className={style.home}>
               <div className={style.qr}>
-                <QRCode size={256} value={`https://sowonpay.gbsw.hs.kr/users/${user.id as string}`}/>
+                <QRCode size={256} value={`https://sowonpay.shutupandtakemy.codes/users/${user.id as string}`}/>
                 <p>QR을 부스 인원이나 은행에 보여주세요</p>
               </div>
               <p className={style.hello}><strong>{user.name}</strong>님의 소원포인트!</p>

@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://sowonpay-api.shutupandtakemy.codes/'
+      '/api': 'https://sowonpay.shutupandtakemy.codes/'
     }
   }
 })

@@ -21,7 +21,7 @@ const QRScanPage = (): JSX.Element => {
   }
 
   useEffect(() => {
-    if (text.startsWith('https://sowonpay.gbsw.hs.kr/users/')) {
+    if (text.startsWith('https://sowonpay.shutupandtakemy.codes/users/')) {
       navigate('/users/' + text.split('/')[text.split('/').length - 1])
     }
   }, [text])

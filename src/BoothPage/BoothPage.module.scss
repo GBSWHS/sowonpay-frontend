@@ -1,0 +1,40 @@
+.outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    .point {
+      display: flex;
+      font-size: 30px;
+      color: #00A2D6;
+      
+      >p {
+        padding: 0;
+        color: #212121;
+      }
+    }
+
+
+  }
+}
+
+.back {
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  color: #aaa;
+  position: absolute;
+  z-index: 100;
+}

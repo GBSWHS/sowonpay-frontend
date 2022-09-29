@@ -1,0 +1,26 @@
+.ranking {
+  td:first-child {
+    color: #00A2D6;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 10px;
+
+    &.mybooth {
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+
+  td:nth-child(2) {
+    padding: 10px;
+  }
+  
+  p {
+    padding: 0px;
+    margin: 0px;
+
+    &:first-child {
+      font-size: 10px;
+    }
+  }
+}

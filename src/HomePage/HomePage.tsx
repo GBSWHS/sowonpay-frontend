@@ -62,12 +62,14 @@ const HomePage = (): JSX.Element => {
                 <p>p</p>
               </div>
             </div>
-            {(user.booths.length > 0) && (
-              <Link to="/booths"><Ripple className={style.qrscan}><FaStore /><p>내 부스</p></Ripple></Link>
-            )}
-            {(user.isAdmin === true || user.booths.length > 0) && (
-              <Link to="/qrscan"><Ripple className={style.qrscan}><FaQrcode /><p>QR 인식</p></Ripple></Link>
-            )}
+            <div className={style.buttons}>
+              {(user.booths.length > 0) && (
+                <Link to="/booths"><Ripple className={style.qrscan}><FaStore /><p>내 부스</p></Ripple></Link>
+              )}
+              {(user.isAdmin === true || user.booths.length > 0) && (
+                <Link to="/qrscan"><Ripple className={style.qrscan}><FaQrcode /><p>QR 인식</p></Ripple></Link>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

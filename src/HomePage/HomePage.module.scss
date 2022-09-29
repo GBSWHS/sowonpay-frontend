@@ -41,16 +41,26 @@
     }
   }
 
-  .qrscan {
-    width: 100%;
-    text-align: center;
-    box-shadow: 0px 0px 10px #21212155;
-    background-color: #00A2D6;
-    color: white;
-    padding: 5px 0px;
+  .buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    width: 100%;
+
+    > a {
+      width: 100%;
+    }
+     
+    .qrscan {
+      width: 100%;
+      text-align: center;
+      box-shadow: 0px 0px 5px #21212155;
+      background-color: #00A2D6;
+      color: white;
+      padding: 5px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
   }
+
 }

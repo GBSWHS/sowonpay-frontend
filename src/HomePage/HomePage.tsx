@@ -5,21 +5,21 @@ import { useCookie } from 'react-use'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Ripple from 'react-ripples'
-import { FaQrcode } from 'react-icons/fa'
-import QRCode from 'react-qr-code'
+import { FaQrcode, FaStore } from 'react-icons/fa'
 
 import style from './HomePage.module.scss'
+import QRMaker from '../components/QRMaker/QRMaker'
 
 const HomePage = (): JSX.Element => {
-  const [point, setPoint] = useState(3242)
+  const [point, setPoint] = useState(444)
   const [user, setUser] = useState<any>({})
   const [, , removeSession] = useCookie('SESSION_TOKEN')
 
   useEffect(() => {
     document.title = '소원페이 - 내포인트'
 
-    const eventSource = new EventSource('/api/users/@live')
-    eventSource.onmessage = ({ data }) => {
+    const pointSse = new EventSource('/api/users/@sse-point')
+    pointSse.onmessage = ({ data }) => {
       data = JSON.parse(data)
       setPoint(data.point)
     }
@@ -33,6 +33,7 @@ const HomePage = (): JSX.Element => {
         }
         return await res.json()
       })
+      setPoint(data.point)
       setUser(data)
     })()
   }, [])
@@ -48,7 +49,7 @@ const HomePage = (): JSX.Element => {
             className={style.outer}>
             <div className={style.home}>
               <div className={style.qr}>
-                <QRCode size={256} value={`https://sowonpay.shutupandtakemy.codes/users/${user.id as string}`}/>
+                <QRMaker id={user.id}/>
                 <p>QR을 부스 인원이나 은행에 보여주세요</p>
               </div>
               <p className={style.hello}><strong>{user.name}</strong>님의 소원포인트!</p>
@@ -57,14 +58,13 @@ const HomePage = (): JSX.Element => {
                   animateToNumber={point}
                   includeComma
                   fontStyle={{ fontSize: 50, fontWeight: 800 }}
-                  configs={[
-                    { mass: 1, tension: 130, friction: 40 },
-                    { mass: 2, tension: 140, friction: 40 },
-                    { mass: 3, tension: 130, friction: 40 }]}
                   />
                 <p>p</p>
               </div>
             </div>
+            {(user.booths.length > 0) && (
+              <Link to="/booths"><Ripple className={style.qrscan}><FaStore /><p>내 부스</p></Ripple></Link>
+            )}
             {(user.isAdmin === true || user.booths.length > 0) && (
               <Link to="/qrscan"><Ripple className={style.qrscan}><FaQrcode /><p>QR 인식</p></Ripple></Link>
             )}

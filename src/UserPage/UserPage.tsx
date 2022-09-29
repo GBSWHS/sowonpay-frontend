@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useCookie } from 'react-use'
 import Container from '../Container/Container'
 import Ripple from 'react-ripples'
 import Button from '../components/Button/Button'
 import { FaAngleLeft, FaBackspace, FaCheck, FaMoneyBill, FaStore } from 'react-icons/fa'
+import QueryString from 'qs'
 
 import style from './UserPage.module.scss'
 import Modal from '../components/Modal/Modal'
@@ -18,6 +19,7 @@ const UserPage = (): JSX.Element => {
   const [booth, setBooth] = useState<number>(0)
   const [amount, setAmount] = useState<string>('0')
   const params = useParams()
+  const location = useLocation()
   const [message, setMessage] = useState('')
   const [step, setStep] = useState(0)
 
@@ -76,6 +78,7 @@ const UserPage = (): JSX.Element => {
       },
       body: JSON.stringify({
         receiver: params.id,
+        qrkey: QueryString.parse(location.search, { ignoreQueryPrefix: true }).key,
         booth: type === 'BOOTH' ? booth : undefined,
         amount: Number(amount)
       })

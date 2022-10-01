@@ -26,7 +26,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
@@ -34,6 +33,8 @@
           return swRegistration.sync.register('sync')
         })
       }
+
+      alert('인터넷 연결이 불안정합니다. WIFI및 데이터 네트워크 상태를 확인해 주세요.')
     </script>
   </body>
 </html>

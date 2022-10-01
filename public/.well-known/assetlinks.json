@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.hs.gbsw.sowonpay.twa",
+      "sha256_cert_fingerprints": [
+        "44:A0:88:3A:46:A3:E9:FC:2A:0A:D7:76:4D:D6:83:ED:CF:D8:2D:CF:05:78:0C:98:8D:D2:9A:95:AA:7C:03:FC"
+      ]
+    }
+  }
+]

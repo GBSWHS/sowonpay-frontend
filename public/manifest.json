@@ -33,5 +33,53 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "나의 QR",
+      "url": "/",
+      "description": "나의 결제용 QR코드와 포인트 현황을 알아보세요!"
+    },
+    {
+      "name": "QR 스캐닝",
+      "url": "/qrscan",
+      "description": "결제를 위해 QR를 스캔합니다."
+    },
+    {
+      "name": "내 부스",
+      "url": "/booths",
+      "description": "부스 수익 현황을 한곳에서 알아보세요!"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/screenshot1.png",
+      "sizes": "2160x3840",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "QR 및 잔고 화면"
+    },
+    {
+      "src": "/assets/screenshots/screenshot2.png",
+      "sizes": "2160x3840",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "부스 수익금 화면"
+    },
+    {
+      "src": "/assets/screenshots/screenshot3.png",
+      "sizes": "2160x3840",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "결제 화면"
+    },
+    {
+      "src": "/assets/screenshots/screenshot4.png",
+      "sizes": "2160x3840",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "다같이!"
+    }
+  ],
+  "categories": ["payment", "point", "utilities"]
 }

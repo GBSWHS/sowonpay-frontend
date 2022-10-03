@@ -8,11 +8,29 @@
   "name": "소원페이 - 학교내 결제를 쉽고 빠르게",
   "short_name": "소원페이",
   "start_url": "/",
+  "iarc_rating_id": "08ef7570-6ae9-4fc0-9e0a-974fc0e809c9",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "kr.hs.gbsw.sowonpay.twa",
+      "url": "https://play.google.com/store/apps/details?id=kr.hs.gbsw.sowonpay.twa",
+      "fingerprints": [{
+        "type": "sha256_cert",
+        "value": "44:A0:88:3A:46:A3:E9:FC:2A:0A:D7:76:4D:D6:83:ED:CF:D8:2D:CF:05:78:0C:98:8D:D2:9A:95:AA:7C:03:FC"
+      }],
+      "min_version": "1"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/app/sowonpay/id6443638258"
+    }
+  ],
   "icons": [
     {
       "src": "/assets/manifest-icon-192.maskable.png",
       "sizes": "192x192",
-      "type": "image/png",
+        "type": "image/png",
       "purpose": "any"
     },
     {

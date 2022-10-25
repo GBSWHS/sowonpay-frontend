@@ -48,11 +48,11 @@ const MonitorPage = (): JSX.Element => {
 
     const txSse = new EventSource('/api/metrics/@sse')
     txSse.onmessage = ({ data }) => {
-      setTxTable([data, ...txTable])
+      setTxTable((txTable) => [data, ...txTable])
     }
 
     void fetchData()
-    setInterval(fetchData, 10 * 1000)
+    setInterval(fetchData, 60 * 1000)
   }, [])
 
   return (
@@ -117,7 +117,7 @@ const MonitorPage = (): JSX.Element => {
       </div>
       <div className={style.row}>
         <div className={style.grow}>
-          {txTable}
+          {JSON.stringify(txTable)}
           {/* <p>0 {'->'} A : 100p 담당자: ㅇㅇㅇ (00시 00분 00초)</p>
           <p>A {'->'} B : 100p 담당자: ㅇㅇㅇ(00시 00분 00초)</p> */}
         </div>

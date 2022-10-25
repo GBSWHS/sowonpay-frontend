@@ -12,6 +12,7 @@ import {
   Legend
 } from 'chart.js'
 import { useEffect, useState } from 'react'
+import moment from 'moment'
 
 ChartJS.register(
   CategoryScale,
@@ -31,8 +32,8 @@ const MonitorPage = (): JSX.Element => {
 
   const fetchData = async (): Promise<void> => {
     const statsResult = await fetch('/api/metrics').then(async (res) => await res.json())
-    setStats([...stats, {
-      date: Date.now(),
+    setStats((stats) => [...stats, {
+      date: moment().format('h:mm:ss'),
       ...statsResult,
       pm: statsResult.imports - statsResult.holds - statsResult.exports
     }])

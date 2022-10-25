@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@fontsource/noto-sans-kr": "^4.5.11",
+    "chart.js": "^3.9.1",
     "framer-motion": "^7.4.0",
     "normalize.css": "^8.0.1",
     "qs": "^6.11.0",
     "react": "^18.2.0",
     "react-animated-numbers": "^0.14.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-qr-barcode-scanner": "^1.0.6",
@@ -39,5 +41,5 @@
     "typescript": "*",
     "vite": "^3.1.0"
   },
-  "proxy": "https://sowonpay-api.gbsw.hs.kr"
+  "proxy": "http://sowonpay.shutupandtakemy.codes"
 }

@@ -7,6 +7,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@vitejs/plugin-react': ^2.1.0
+  chart.js: ^3.9.1
   eslint: ^8.0.1
   eslint-config-standard-with-typescript: ^23.0.0
   eslint-plugin-import: ^2.25.2
@@ -18,6 +19,7 @@ specifiers:
   qs: ^6.11.0
   react: ^18.2.0
   react-animated-numbers: ^0.14.0
+  react-chartjs-2: ^4.3.1
   react-dom: ^18.2.0
   react-icons: ^4.4.0
   react-qr-barcode-scanner: ^1.0.6
@@ -31,11 +33,13 @@ specifiers:
 
 dependencies:
   '@fontsource/noto-sans-kr': 4.5.11
+  chart.js: 3.9.1
   framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
   normalize.css: 8.0.1
   qs: 6.11.0
   react: 18.2.0
   react-animated-numbers: 0.14.0_biqbaboplfbrettd7655fr4n2y
+  react-chartjs-2: 4.3.1_2unjvz6v6rskedwoxtmbfw2rje
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-qr-barcode-scanner: 1.0.6_biqbaboplfbrettd7655fr4n2y
@@ -998,6 +1002,10 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
@@ -2475,6 +2483,16 @@ packages:
       - react-zdog
       - three
       - zdog
+    dev: false
+
+  /react-chartjs-2/4.3.1_2unjvz6v6rskedwoxtmbfw2rje:
+    resolution: {integrity: sha512-5i3mjP6tU7QSn0jvb8I4hudTzHJqS8l00ORJnVwI2sYu0ihpj83Lv2YzfxunfxTZkscKvZu2F2w9LkwNBhj6xA==}
+    peerDependencies:
+      chart.js: ^3.5.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      chart.js: 3.9.1
+      react: 18.2.0
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:

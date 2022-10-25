@@ -9,6 +9,7 @@ import QRScanPage from '../QRScanPage/QRScanPage'
 import UserPage from '../UserPage/UserPage'
 import BoothListPage from '../BoothListPage/BoothListPage'
 import BoothPage from '../BoothPage/BoothPage'
+import MonitorPage from '../MonitorPage/MonitorPage'
 
 const App = (): JSX.Element => {
   const [isLogined] = useCookie('SESSION_TOKEN')
@@ -24,6 +25,7 @@ const App = (): JSX.Element => {
         <Route path="/users/:id" element={<UserPage />}/>
         <Route path="/booths" element={<BoothListPage />}/>
         <Route path="/booths/:id" element={<BoothPage />}/>
+        <Route path="/monitor" element={<MonitorPage />}/>
       </Routes>
     </BrowserRouter>
   )

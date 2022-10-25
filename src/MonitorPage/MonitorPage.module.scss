@@ -1,0 +1,36 @@
+.container {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100vh;
+  overflow: hidden;
+
+  div {
+    // border:  #ff7e7e dashed 3px;
+    padding: 10px;
+
+    &.row {
+      display: flex;
+    }
+
+    &.grow {
+      flex: 1;
+    }
+  }
+
+  h1, h2, p, hr {
+    padding: 0;
+    margin: 0;
+  }
+
+  .title > h1 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .title > h2 {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}

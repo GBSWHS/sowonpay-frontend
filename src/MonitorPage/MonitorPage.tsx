@@ -43,11 +43,13 @@ const MonitorPage = (): JSX.Element => {
     const rankSse = new EventSource('/api/booths/@rank')
     rankSse.onmessage = ({ data }) => {
       data = JSON.parse(data)
+      console.log(data)
       setRanking(data)
     }
 
     const txSse = new EventSource('/api/metrics/@sse')
     txSse.onmessage = ({ data }) => {
+      console.log(data)
       setTxTable((txTable) => [data, ...txTable])
     }
 

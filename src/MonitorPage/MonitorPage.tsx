@@ -36,7 +36,7 @@ const MonitorPage = (): JSX.Element => {
       setRanking(data)
     }
 
-    const txSse = new EventSource('/api/transactions/@sse-metric')
+    const txSse = new EventSource('/api/metrics/@sse')
     txSse.onmessage = ({ data }) => {
       setTxTable([data, ...txTable])
     }

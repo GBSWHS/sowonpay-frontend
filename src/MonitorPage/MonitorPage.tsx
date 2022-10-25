@@ -29,6 +29,15 @@ const MonitorPage = (): JSX.Element => {
   const [ranking, setRanking] = useState<any[] | null>(null)
   const [stats, setStats] = useState<any[]>([])
 
+  const fetchData = async (): Promise<void> => {
+    const statsResult = await fetch('/api/metrics').then(async (res) => await res.json())
+    setStats([...stats, {
+      date: Date.now(),
+      ...statsResult,
+      pm: statsResult.imports - statsResult.holds - statsResult.exports
+    }])
+  }
+
   useEffect(() => {
     const rankSse = new EventSource('/api/booths/@rank')
     rankSse.onmessage = ({ data }) => {
@@ -41,16 +50,8 @@ const MonitorPage = (): JSX.Element => {
       setTxTable([data, ...txTable])
     }
 
-    setInterval(() => {
-      void (async () => {
-        const statsResult = await fetch('/api/metrics').then(async (res) => await res.json())
-        setStats([...stats, {
-          date: new Date(),
-          ...statsResult,
-          pm: statsResult.imports - statsResult.holds - statsResult.exports
-        }])
-      })()
-    }, 30 * 1000)
+    void fetchData()
+    setInterval(fetchData, 10 * 1000)
   }, [])
 
   return (
